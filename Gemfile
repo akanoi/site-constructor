@@ -36,3 +36,5 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise', '~>4.0.0'
+
+gem 'tzinfo-data'

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
     delete 'exit', to: 'devise/sessions#destroy'
 
+    get 'exit', to: 'devise/sessions#destroy'
+
     get 'register', to: 'devise/registrations#new'
 
     get 'edit', to: 'devise/registrations#edit'
