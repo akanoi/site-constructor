@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  menu:
+    name_logo: "Constructor"
+    creating: "Creating"
+    about: "About"
+    sign_up: "Sign Up"
+    login: "Login"

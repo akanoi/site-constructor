@@ -111,6 +111,8 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2016.10)
+      tzinfo (>= 1.0.0)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
     warden (1.2.6)
@@ -129,6 +131,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   turbolinks
+  tzinfo-data
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
