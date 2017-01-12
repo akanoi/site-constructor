@@ -1,21 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :users
+  scope '(:locale)' do
+    devise_for :users
 
-  get 'home' => 'page#home'
+    get 'home' => 'page#home'
+    get 'about' => 'page#about'
 
-  get 'about' => 'page#about'
+    devise_scope :user do
+      get 'login', to: 'devise/sessions#new'
+      post 'login', to: 'devise/sessions#create'
 
-  devise_scope :user do
-    get 'login', to: 'devise/sessions#new'
-    post 'login', to: 'devise/sessions#create'
+      delete 'exit', to: 'devise/sessions#destroy'
 
-    delete 'exit', to: 'devise/sessions#destroy'
+      get 'exit', to: 'devise/sessions#destroy'
 
-    get 'exit', to: 'devise/sessions#destroy'
+      get 'register', to: 'devise/registrations#new'
 
-    get 'register', to: 'devise/registrations#new'
+      get 'edit', to: 'devise/registrations#edit'
+    end
 
-    get 'edit', to: 'devise/registrations#edit'
+    root 'page#home'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -23,7 +26,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'page#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

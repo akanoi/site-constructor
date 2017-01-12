@@ -1,7 +1,8 @@
 ru:
-  menu:
-    name_logo: "Конструктор"
-    creating: "Создание"
-    about: "О конструкторе"
-    sign_up: "Регистрация"
-    login: "Войти"
+  layouts:
+    application:
+      name_logo: "Конструктор"
+      creating: "Создание"
+      about: "О конструкторе"
+      sign_up: "Регистрация"
+      login: "Войти"
