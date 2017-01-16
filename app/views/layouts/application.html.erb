@@ -23,6 +23,7 @@
                             <li><a href="/register"><span class="glyphicon glyphicon-user"></span> <%= t('.sign_up') %></a></li>
                             <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> <%= t('.login') %></a></li>
                         <% else %>
+                            <li><a href="#"><%= current_user.name %></a></li>
                             <li><a href="/exit" class="material-icons">exit_to_app</a></li>
                         <% end %>
                     </ul>
