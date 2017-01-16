@@ -36,6 +36,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.text :about
       t.integer :points, default: 0
       t.string :bages
+      t.string :img_url
 
       t.timestamps null: false
     end

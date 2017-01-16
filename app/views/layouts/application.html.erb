@@ -3,7 +3,6 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src='/javascripts/letterAvatar.js' type='text/javascript'></script>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
@@ -16,7 +15,6 @@
                         <a class="navbar-brand" href="/">Constructor</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><%= t('.creating') %></a></li>
                         <li><a href="/about"><%= t('.about') %></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -24,8 +22,16 @@
                             <li><a href="/register"><span class="glyphicon glyphicon-user"></span> <%= t('.sign_up') %></a></li>
                             <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> <%= t('.login') %></a></li>
                         <% else %>
-                            <li><a href="#">
-                                <img width="24" height="24" avatar="<%= current_user.name %>" class="round">
+                            <li><a href="#" class="material-icons">note_add</a><li>
+                            <li><a href="/profile/<%= current_user.id %>">
+                                <% if current_user.img_url? %>
+                                    <div>
+                                        <img width="24" height="24" src="/images/<%= current_user.img_url %>" class="round">
+                                    </div>
+                                <% else %>
+                                    <script src='/javascripts/letterAvatar.js' type='text/javascript'></script>
+                                    <img width="24" height="24" avatar="<%= current_user.name %>" class="round">
+                                <% end %>
                             </a></li>
                             <li><a href="/exit" class="material-icons">exit_to_app</a></li>
                         <% end %>
