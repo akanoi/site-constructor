@@ -1,3 +1,45 @@
 // Place all the styles related to the Page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.left-area, .right-area {
+    margin-top: 15px;
+}
+
+.right-area {
+    height: 500px;
+}
+
+.news {
+    height: 500px;
+    background-color: white;
+}
+
+.left-area {
+    padding: 0px;
+    position: fixed;
+    right: 0;
+}
+
+.users-rating, .tags-cloud {
+    margin-top: 15px;
+}
+
+.sites-rating, .users-rating, .tags-cloud {
+    margin-right: 15px;
+}
+
+.sites-rating {
+    background-color: red;
+    height: 100px;
+}
+
+.users-rating {
+    background-color: blue;
+    height: 100px;
+}
+
+.tags-cloud {
+    background-color: green;
+    height: 100px;
+}

@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
 #menu {
     .material-icons {
         font-size: 24px;
@@ -22,7 +21,26 @@
 
     .navbar {
         border-radius: 0px;
+        background-color: #306452;
+        border: none;
+        color: black;
     }
+
+    li {
+        a {
+            color: #F2ECE9;
+        }
+
+        a:hover {
+            color: #C5CCCA;
+        }
+    }
+}
+
+#main {
+    margin-top: -20px;
+    background-color: #E6DEDA; 
+    height: auto;
 }
 
 .sessions, .registrations, .passwords {

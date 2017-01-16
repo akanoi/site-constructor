@@ -29,9 +29,11 @@
                 </div>
             </nav>
         </div>
-        <div id="main" class="<%= controller.controller_name %>">
+        <div id="main" class="<%= controller.controller_name %> container-fluid">
             <title><%= @page_title || "Site Constructor" %></title>
-            <%= yield %>
+            <div class="row">
+                <%= yield %>
+            </div>
         </div>
     </body>
 </html>
