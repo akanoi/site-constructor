@@ -33,7 +33,16 @@
 
         a:hover {
             color: #C5CCCA;
+            cursor: pointer;
         }
+    }
+
+    img {
+        margin-top: -5px;
+    }
+
+    .round { 
+        border-radius: 50%; 
     }
 }
 
