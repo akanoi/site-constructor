@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
   scope '(:locale)' do
-    devise_for :users
-
     get 'home' => 'page#home'
     get 'about' => 'page#about'
 
-    devise_scope :user do
+    devise_for :users
+    as :user do
       get 'login', to: 'devise/sessions#new'
       post 'login', to: 'devise/sessions#create'
 
-      delete 'exit', to: 'devise/sessions#destroy'
+      delete 'exit', to: 'devise/sessions#destroy' 
 
       get 'exit', to: 'devise/sessions#destroy'
 
-      get 'register', to: 'devise/registrations#new'
+      get 'register', to: 'devise/registrations#new' 
 
       get 'edit', to: 'devise/registrations#edit'
     end
