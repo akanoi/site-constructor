@@ -36,7 +36,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.text :about
       t.integer :points, default: 0
       t.string :bages
-      t.string :img_url, default: "blank-avatar.jpg"
 
       t.timestamps null: false
     end

@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20170111141427) do
     t.text     "about"
     t.integer  "points"
     t.string   "bages"
-    t.string   "img_url"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
