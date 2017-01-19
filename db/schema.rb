@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116222806) do
+ActiveRecord::Schema.define(version: 20170119155804) do
+
+  create_table "sites", force: true do |t|
+    t.string   "title",       null: false
+    t.text     "description"
+    t.integer  "user",        null: false
+    t.integer  "rating"
+    t.string   "tags"
+    t.datetime "create_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
