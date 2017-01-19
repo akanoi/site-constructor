@@ -2,44 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.left-area, .right-area {
+.left-area, .right-area, .users-list {
     margin-top: 15px;
 }
 
 .right-area {
     height: 500px;
-}
 
-.news {
-    height: 500px;
-    background-color: white;
+    .news {
+        height: 500px;
+        background-color: white;
+    }
 }
 
 .left-area {
     padding: 0px;
     position: fixed;
     right: 0;
+
+
+    .users-rating, .tags-cloud {
+        margin-top: 15px;
+    }
+
+    .sites-rating, .users-rating, .tags-cloud {
+        margin-right: 15px;
+    }
+
+    .sites-rating {
+        background-color: red;
+        height: 100px;
+    }
+
+    .users-rating {
+        background-color: blue;
+        height: 100px;
+    }
+
+    .tags-cloud {
+        background-color: green;
+        height: 100px;
+    }
 }
 
-.users-rating, .tags-cloud {
-    margin-top: 15px;
-}
+.users-list {
+    margin-left: 340px;
+    .user-papper {
+        background-color: white;
+        margin-top: 15px;
+        .info {
+            margin-left: 10px;
+            padding: 10px;
+        }
 
-.sites-rating, .users-rating, .tags-cloud {
-    margin-right: 15px;
-}
-
-.sites-rating {
-    background-color: red;
-    height: 100px;
-}
-
-.users-rating {
-    background-color: blue;
-    height: 100px;
-}
-
-.tags-cloud {
-    background-color: green;
-    height: 100px;
+        // .buttons {
+        //     display: ;
+        // }
+    }
 }

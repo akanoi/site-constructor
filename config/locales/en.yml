@@ -20,9 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  menu:
-    name_logo: "Constructor"
-    creating: "Creating"
-    about: "About"
-    sign_up: "Sign Up"
-    login: "Login"
+  layouts:
+    application:
+      name_logo: "Constructor"
+      creating: "Creating"
+      about: "About"
+      sign_up: "Sign Up"
+      login: "Login"
+      users: "Users"
+  page:
+    users:
+      name: "Name:"
+      email: "Email:"
+      birthday: "Birthday:"
+      profile: "Profile"
+      set-admin: "Set admin"
+      del-admin: "Delete admin role"

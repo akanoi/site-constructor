@@ -6,4 +6,9 @@ class PageController < ApplicationController
   def about
     @page_title = "About"
   end
+
+  def users
+    @page_title = "Users"
+    @users = User.all
+  end
 end

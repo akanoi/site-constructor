@@ -1,0 +1,22 @@
+<div class="users-list col-md-6">
+    <% @users.each do |user| %>
+        <div class="user-papper">
+            <div class="avatar">
+            </div>
+            <div class="info"> 
+                <p><strong><%= t('.name') %></strong> <%= user.name %></p>
+                <p><strong><%= t('.email') %></strong> <%= user.email %></p>
+                <p><strong><%= t('.birthday') %></strong> <%= user.birthday %></p>
+                <div class="buttons">
+                    <button><%= t('.profile') %></button>
+                    <% if user.admin %>
+                        <button><%= t('.del-admin') %></button>
+                    <% else %>
+                        <button><%= t('.set-admin') %></button>
+                    <% end %>
+                </div>
+            </div>
+            
+        </div>
+    <% end %>
+</div>

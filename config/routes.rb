@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   scope '(:locale)' do
     get 'home' => 'page#home'
     get 'about' => 'page#about'
+    get 'users' => 'page#users'
 
     devise_for :users
     as :user do
