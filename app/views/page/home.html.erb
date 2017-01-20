@@ -1,14 +1,22 @@
-<div class="col-md-10 right-area">
+<div class="col-md-10 left-area">
     <div class="news">
 
     </div>
 </div>
-<div class="col-md-2 left-area">
+<div class="col-md-2 right-area">
     <div class="sites-rating">
-        
+        <ul class="list">
+            <% @sites.each do |site| %>
+                <li><%= site.title %><%= site.rating %></li>
+            <% end %>
+        </ul>
     </div>
     <div class="users-rating">
-        
+        <ul class="list">
+            <% @users.each do |user| %>
+                <li><%= user.name %><%= user.points %></li>
+            <% end %>
+        </ul>
     </div>
     <div class="tags-cloud">
         
