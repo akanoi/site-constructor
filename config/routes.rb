@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :site_pages
   resources :sites
   scope '(:locale)' do
     get 'home' => 'page#home'
