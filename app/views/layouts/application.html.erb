@@ -11,21 +11,23 @@
         <div id="menu">
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="/">Constructor</a>
-                    </div>
+                    <!-- <div class="navbar-header">
+                        <ul class="nav navbar-nav">
+                            <li><%= link_to "users", {controller: "/page", action: "home"} do %><%= t('.home') %><% end %></li>
+                        </ul>
+                    </div> -->
                     <ul class="nav navbar-nav">
-                        <li><a href="/about"><%= t('.about') %></a></li>
+                    <li><%= link_to "home", {controller: "/page", action: "home"} do %><%= t('.home') %><% end %></li>
                     </ul>
                     <% if current_user.try(:admin)%>
                         <ul class="nav navbar-nav">
-                            <li><a href="/users"><%= t('.users') %></a></li>
+                            <li><%= link_to("users") do %><%= t('.users') %><% end %></li>
                         </ul>
                     <% end %>
                     <ul class="nav navbar-nav navbar-right">
                         <% unless user_signed_in? %>
-                            <li><a href="/register"><span class="glyphicon glyphicon-user"></span> <%= t('.sign_up') %></a></li>
-                            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> <%= t('.login') %></a></li>
+                            <li><%= link_to("register") do %><span class="glyphicon glyphicon-user"></span> <%= t('.sign_up') %><% end %></li>
+                            <li><%= link_to("login") do %><span class="glyphicon glyphicon-log-in"></span> <%= t('.login') %><% end %></li>
                         <% else %>
                             <li><a href="#" class="material-icons">note_add</a><li>
                             <li><a href="/profile/<%= current_user.id %>">

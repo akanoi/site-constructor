@@ -22,6 +22,7 @@
 en:
   layouts:
     application:
+      home: "Home"
       name_logo: "Constructor"
       creating: "Creating"
       about: "About"

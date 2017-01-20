@@ -1,25 +1,27 @@
 Rails.application.routes.draw do
-  resources :site_pages
-  resources :sites
-  scope '(:locale)' do
-    get 'home' => 'page#home'
-    get 'about' => 'page#about'
-    get 'users' => 'page#users'
+  
+  scope '(:locale)', locale: /en|ru/ do
+    resources :site_pages
+    resources :sites
+    resources :page
+    resources :users
+    resources :devise
+
+    get 'home', to: 'page#home'
+    get 'about', to: 'page#about'
+    get 'users', to: 'page#users'
 
     devise_for :users
     as :user do
       get 'login', to: 'devise/sessions#new'
       post 'login', to: 'devise/sessions#create'
-
       delete 'exit', to: 'devise/sessions#destroy' 
-
       get 'exit', to: 'devise/sessions#destroy'
 
       get 'register', to: 'devise/registrations#new' 
-
       get 'edit', to: 'devise/registrations#edit'
     end
-
+    get '/:locale', to: 'page#home'
     root 'page#home'
   end
 

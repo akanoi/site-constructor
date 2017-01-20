@@ -1,6 +1,7 @@
 ru:
   layouts:
     application:
+      home: "Главная"
       name_logo: "Конструктор"
       creating: "Создание"
       about: "О конструкторе"
