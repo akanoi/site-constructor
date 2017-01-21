@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :widgets
   scope '(:locale)', locale: /en|ru/ do
     resources :site_pages
     resources :sites
