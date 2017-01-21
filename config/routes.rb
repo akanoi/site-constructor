@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'home', to: 'page#home'
     get 'about', to: 'page#about'
     get 'users', to: 'page#users'
+    get 'new_site', to: 'sites#new'
 
     devise_for :users
     as :user do

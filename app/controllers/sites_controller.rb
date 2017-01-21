@@ -13,6 +13,7 @@ class SitesController < ApplicationController
   end
 
   def new
+    @page_title = "New Site"
     @site = Site.new
     respond_with(@site)
   end
