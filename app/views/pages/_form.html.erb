@@ -1,0 +1,26 @@
+<%= form_for @page, url: user_site_pages_path do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :layout %>
+    <%= f.select(:layout, options_for_select([['Vertical', 'Vertical'], ['Horizontal', 'Horizontal'],['Combo', 'Combo']])) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script>
+  $('#page-editor').froalaEditor({
+      inlineMode: false,
+      minHeight: '500px',
+      buttons: ['bold', 'italic', 'underline', 'formatBlock',
+      'align', 'insertUnorderedList', 'insertOrderedList',
+      'outdent', 'indent', 'createLink', 'html', 'InsertImage'],
+  })
+</script>

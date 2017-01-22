@@ -1,0 +1,3 @@
+<%= button_to("Save Page", user_site_path(current_user.id, @site.id), method: :get, class: "btn btn-success") %>
+<h1>Editing Page</h1>
+  <%= render partial: 'pages/layout/'+@page.layout.downcase%>

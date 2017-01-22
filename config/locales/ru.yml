@@ -8,7 +8,8 @@ ru:
       sign_up: "Регистрация"
       login: "Войти"
       users: "Пользователи"
-  page:
+
+  single:
     users:
       name: "Имя Фамилия:"
       email: "Е-мейл:"
@@ -16,3 +17,9 @@ ru:
       profile: "Профиль"
       set-admin: "Сделать админом"
       del-admin: "Убрать права админа"
+    home:
+      title: "Заголовок"
+      description: "Описание"
+      user: "Автор"
+      created: "Созданно"
+      show: "Показать"

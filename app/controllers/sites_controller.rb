@@ -8,6 +8,11 @@ class SitesController < ApplicationController
   end
 
   def show
+    if params[:cur_page_id].nil?
+      @current_page = @site.pages.first
+    else
+      @current_page = @site.pages.find(params[:cur_page_id])
+    end
   end
 
   def new
@@ -25,7 +30,7 @@ class SitesController < ApplicationController
     @user.sites.push(@site)
     respond_to do |format|
       if @site.save
-        format.html { redirect_to new_site_site_page_path(@site.id) }
+        format.html { redirect_to new_user_site_page_path(@user.id, @site.id) }
         format.json { render :show, status: :created, location: @site }
       else
         format.html { render :new }

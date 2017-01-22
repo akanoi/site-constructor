@@ -1,0 +1,25 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#body-form-left,
+#body-form-right,
+#body-form-top,
+#body-form-bottom {
+  display: none;
+}
+
+.btn {
+  position: absolute;
+  right: 0;
+}
+
+.comp-vertical-first,
+.comp-vertical-second {
+  display: inline-block;
+}
+
+.hr {
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}

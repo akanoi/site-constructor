@@ -1,3 +1,3 @@
 class Widget < ActiveRecord::Base
-  belongs_to :site_pages
+  belongs_to :pages
 end

@@ -1,4 +1,43 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<h1 class="site-title">
+  <%= @site.title %>
+</h1>
+<div>
+  <% if user_signed_in? and current_user.id == @site.user_id %>
+    <%= link_to 'New page', new_user_site_page_path(current_user.id, @site.id)%>
+  <% end %>
+</div>
+<% if @site.menu == "Horizontal" %>
+  <ol class="site-nav-hor raw clearfix">
+    <% @site.pages.each do |cur_page| %>
+      <li><%= link_to cur_page.title,{ :controller => "sites", :action => "show", :cur_page_id => cur_page.id }%></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<% if @site.menu == 'Vertical' %>
+  <ol class="site-nav-ver">
+    <% @site.pages.each do |cur_page| %>
+      <li><%= link_to cur_page.title,{ :controller => "sites", :action => "show", :cur_page_id => cur_page.id }%></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<% if @site.menu == 'Another' %>
+  <ol class="site-nav-ano">
+    <% @site.pages.each do |cur_page| %>
+      <li><%= link_to cur_page.title,{ :controller => "sites", :action => "show", :cur_page_id => cur_page.id }%></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<div class="page-container">
+  <% if @current_page %>
+    <h4 style="color: green;"><%= @current_page.title %></h4>
+    <%= render 'pages/show', current_page: @current_page %>
+  <% end %>
+</div>
+
 
 <%= link_to 'Edit', edit_site_path(@site) %> |
 <%= link_to 'Back', sites_path %>

@@ -1,0 +1,82 @@
+// Place all the styles related to the Single controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.left-area, .right-area, .users-list {
+    margin-top: 15px;
+    table {
+        margin: 5px;
+    }
+    th {
+        p {
+        width: 130px;
+        white-space: nowrap; /* Отменяем перенос текста */
+        overflow: hidden; /* Обрезаем содержимое */
+        text-overflow: ellipsis; /* Многоточие */
+        }
+    }
+        
+}
+
+.left-area {
+    height: 500px;
+
+    .news {
+        height: 500px;
+
+        .news-papper {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+
+            .description {
+                width: 500px;
+                white-space: nowrap; /* Отменяем перенос текста */
+                overflow: hidden; /* Обрезаем содержимое */
+                text-overflow: ellipsis; /* Многоточие */
+            }
+        }
+    }
+}
+
+.right-area {
+    padding: 0px;
+    // position: fixed;
+    right: 0;
+
+    .users-rating, .tags-cloud {
+        margin-top: 15px;
+    }
+
+    .sites-rating, .users-rating, .tags-cloud {
+        margin-right: 15px;
+    }
+
+    .sites-rating,
+    .tags-cloud,
+    .users-rating
+     {
+        background-color: white;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 250px;
+        padding: 10px;
+    }
+
+    .list {
+        list-style: none;
+        padding: 5px; 
+    }
+}
+
+.users-list {
+    margin-left: 340px;
+    .user-papper {
+        background-color: white;
+        margin-top: 15px;
+        .info {
+            margin-left: 10px;
+            padding: 10px;
+        }
+    }
+}

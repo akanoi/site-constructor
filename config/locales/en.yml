@@ -29,7 +29,7 @@ en:
       sign_up: "Sign Up"
       login: "Login"
       users: "Users"
-  page:
+  single:
     users:
       name: "Name:"
       email: "Email:"
@@ -37,3 +37,10 @@ en:
       profile: "Profile"
       set-admin: "Set admin"
       del-admin: "Delete admin role"
+    home:
+      title: "Title"
+      description: "Description"
+      user: "Author"
+      created: "Created"
+      show: "Show"
+

@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121215318) do
+ActiveRecord::Schema.define(version: 20170122154016) do
 
-  create_table "site_pages", force: true do |t|
+  create_table "pages", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
     t.integer  "site_id"
-    t.string   "pattern"
+    t.string   "layout"
   end
 
   create_table "sites", force: true do |t|
     t.string   "title",       null: false
     t.text     "description"
-    t.integer  "user_id"
+    t.integer  "user_id",     null: false
     t.integer  "rating"
     t.string   "tags"
     t.datetime "create_time"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170121215318) do
     t.integer  "page"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "page_id"
   end
 
 end

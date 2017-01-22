@@ -1,0 +1,32 @@
+<% case @page.template %>
+<% when 'Vertical' %>
+  <% case @widget.position %>
+  <% when 1 %>
+    $('.body-form-left').hide();
+    $('.comp-vertical-first').html("<%= escape_javascript raw @widget.body %>");
+  <% when 2 %>
+    $('.body-form-right').hide();
+    $('.comp-vertical-second').html("<%= escape_javascript raw @widget.body %>");
+  <% end %>
+<% when 'Horizontal' %>
+  <% case @widget.position %>
+    <% when 1 %>
+      $('.body-form-top').hide();
+      $('.comp-horizontal-first').html("<%= escape_javascript raw @widget.body %>");
+    <% when 2 %>
+      $('.body-form-bottom').hide();
+      $('.comp-horizontal-second').html("<%= escape_javascript raw @widget.body %>");
+    <% end %>
+<% when 'Combo' %>
+  <% case @widget.position %>
+  <% when 1 %>
+    $('.body-form-left').hide();
+    $('.comp-vertical-first').html("<%= escape_javascript raw @widget.body %>");
+  <% when 2 %>
+    $('.body-form-right').hide();
+    $('.comp-vertical-second').html("<%= escape_javascript raw @widget.body %>");
+  <% when 3 %>
+    $('.body-form-top').hide();
+    $('.comp-horizontal-first').html("<%= escape_javascript raw @widget.body %>");
+  <% end %>
+<% end %>

@@ -1,0 +1,43 @@
+<div class="title"><%= current_page.title %></div>
+
+<% case current_page.layout %>
+<% when "Horizontal" %>
+  <div class="horizontal-page">
+    <% if current_page.widgets.position <  current_page.widgets[1].position %>
+      <%= raw current_page.widgets[0].body %> <hr class="hr">
+      <%= raw current_page.widgets.second.body %>
+    <% else %>
+      <%= raw current_page.widgets.second.body %> <hr class="hr">
+      <%= raw current_page.widgets.first.body %>
+    <% end %>
+  </div>
+<% when "Vertical" %>
+  <div class="vertical-page">
+    <% if current_page.widgets.first.position < current_page.widgets.second.position %>
+      <div class="comp-vertical-1 col-md-6">
+        <%= raw current_page.widgets.first.body %>
+      </div>
+      <div class="comp-vertical-2 col-md-6">
+        <%= raw current_page.widgets.second.body %>
+      </div>
+    <% else %>
+      <div class="comp-vertical-1 col-md-6">
+        <%= raw current_page.widgets.second.body %>
+      </div>
+      <div class="comp-vertical-2 col-md-6">
+        <%= raw current_page.widgets.first.body %>
+      </div>
+    <% end %>
+  </div>
+<% when "Combo" %>
+  <% current_page.widgets.each do |widget| %>
+    <% if widget.position == 1 %>
+      <div class="col-md-6"><%= raw widget.body %></div>
+    <% elsif widget.position == 2%>
+      <div class="col-md-6"><%= raw widget.body %></div>
+    <% else %>
+      <div><%= raw widget.body %></div>
+    <% end %>
+  <% end %>
+<% end %>
+

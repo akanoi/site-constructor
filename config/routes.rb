@@ -1,27 +1,26 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /en|ru/ do
     resources :widgets
-      resources :sites
-    resources :page
-    # resources :users
+    resources :sites
+    resources :single
+    resources :pages
     resources :devise
     devise_for :users
 
-    resources :users, shallow: true do
-      resources :sites, shallow: true do
-        resources :site_pages, shallow: true, :as => "pages"  do
+    resources :users do
+      resources :sites do
+        resources :pages do
           resources :widget
         end
       end
     end
 
-    get 'home', to: 'page#home', as: :home
-    get 'about', to: 'page#about'
-    get 'users', to: 'page#users'
+    get 'home', to: 'single#home', as: :home
+    get '/users_list', to: 'single#users', as: :users_list
 
     
-    get '/:locale', to: 'page#home'
-    root 'page#home'
+    get '/:locale', to: 'single#home'
+    root 'single#home'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
