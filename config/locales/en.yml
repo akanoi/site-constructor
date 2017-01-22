@@ -21,7 +21,7 @@
 
 en:
   layouts:
-    application:
+    menu:
       home: "Home"
       name_logo: "Constructor"
       creating: "Creating"

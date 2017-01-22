@@ -4,37 +4,54 @@ class SitesController < ApplicationController
   respond_to :html
 
   def index
-    @sites = Site.all
-    respond_with(@sites)
+    @sites = Site.order(created_at: :desc)
   end
 
   def show
-    respond_with(@site)
   end
 
   def new
     @page_title = "New Site"
-    @site = Site.new
-    respond_with(@site)
+    @user = User.find(params[:user_id])
+    @site = @user.sites.new
   end
 
   def edit
   end
 
   def create
-    @site = Site.new(site_params)
-    @site.save
-    respond_with(@site)
+    @user = User.find(params[:user_id])
+    @site = @user.sites.create(site_params)
+    @user.sites.push(@site)
+    respond_to do |format|
+      if @site.save
+        format.html { redirect_to new_site_site_page_path(@site.id) }
+        format.json { render :show, status: :created, location: @site }
+      else
+        format.html { render :new }
+        format.json { render json: @site.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
-    @site.update(site_params)
-    respond_with(@site)
+    respond_to do |format|
+      if @site.update(site_params)
+        format.html { redirect_to @site }
+        format.json { render :show, status: :ok, location: @site }
+      else
+        format.html { render :edit }
+        format.json { render json: @site.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
     @site.destroy
-    respond_with(@site)
+    respond_to do |format|
+      format.html { redirect_to sites_url}
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -43,6 +60,6 @@ class SitesController < ApplicationController
     end
 
     def site_params
-      params[:site]
+      params.require(:site).permit(:title, :description, :menu, :user_id, :rating)
     end
 end

@@ -1,12 +1,10 @@
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
-<%= form_for(@site) do |f| %>
-  <% if @site.errors.any? %>
+<%= form_for @site, url: user_sites_path do |f| %>
+  <% if site.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@site.errors.count, "error") %> prohibited this site from being saved:</h2>
+      <h2><%= pluralize(site.errors.count, "error") %> prohibited this site from being saved:</h2>
 
       <ul>
-      <% @site.errors.full_messages.each do |message| %>
+      <% site.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -27,7 +25,7 @@
     <%= f.label :menu %>
     <%= f.select(:menu, options_for_select([['Vertical', 'Vertical'], ['Horizontal', 'Horizontal'],['Bottom', 'Bottom']])) %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
