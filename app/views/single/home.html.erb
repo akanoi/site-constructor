@@ -1,14 +1,17 @@
 <div class="col-md-10 left-area">
   <div class="news">
     <% @sites.each do |site| %>
-      <% if site.title != "" and %>
-        <div class="news-papper">
+      <% if site.title != "" and site.description != "" %>
+        <div class="news-papper ">
+          <div class="col-md-3">
+            <img width="150" height="150" avatar="<%= site.user.name %>">
+          </div>
           <p><strong><%= t('.title') %>:</strong> <%= site.title %></p>
           <p><strong><%= t('.description') %>:</strong></p>
           <p class="description"><%= site.description %></p>
           <p><strong><%= t('.created') %>:</strong> <%= site.created_at.to_s(:db) %></p> 
           <p>
-            <strong><%= t('.user') %>:</strong> <%= @users.find(site.user_id).name %>
+            <strong><%= t('.author') %>:</strong> <%= site.user.name %>
             <%= link_to site_path(site.id) do %><strong><%= t('.show') %></strong><% end %>
           </p>   
         </div>
@@ -18,6 +21,7 @@
 </div>
 <div class="col-md-2 right-area">
   <div class="sites-rating">
+    <%= link_to sites_path do %><%= t('.see_all') %><% end %>
     <table class="list">
       <tr>
         <th><%= t('.title') %></th><th><%= t('.rating') %></th>
@@ -25,26 +29,27 @@
       <% @sites_rating[0..5].each do |site| %>
         <tr>
         <% if site.title != "" %>
-          <th><p><%= site.title %></p></th>
+          <th><%= site.title %></th>
           <th><%= site.rating or 0 %></li></th>
         <% end %>
         </tr>
       <% end %>
     </table>
-    <%= link_to "See all"%>
   </div>
   <div class="users-rating">
+    <%= link_to users_list_path do %><%= t('.see_all') %><% end %>
     <table class="list">
       <tr>
         <th><%= t('.user') %></th><th><%= t('.points') %></th>
      </tr>
       <% @users[0..5].each do |user| %>
       <tr>
-        <th><p><%= user.name %></p></th>
+        <th><%= user.name %></th>
         <th><%= user.points or 0 %></li></th>
       </tr>
       <% end %>
     </table>
+    
   </div>
   <div class="tags-cloud">
     

@@ -86,6 +86,7 @@
             d.addEventListener('DOMContentLoaded', function(event) {
                 LetterAvatar.transform();
             });
+            
         }
 
     })(window, document);

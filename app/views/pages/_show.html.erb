@@ -1,10 +1,9 @@
 <div class="title"><%= current_page.title %></div>
-
 <% case current_page.layout %>
 <% when "Horizontal" %>
   <div class="horizontal-page">
-    <% if current_page.widgets.position <  current_page.widgets[1].position %>
-      <%= raw current_page.widgets[0].body %> <hr class="hr">
+    <% if current_page.widgets.first.position <  current_page.widgets.second.position %>
+      <%= raw current_page.widgets.first.body %> <hr class="hr">
       <%= raw current_page.widgets.second.body %>
     <% else %>
       <%= raw current_page.widgets.second.body %> <hr class="hr">

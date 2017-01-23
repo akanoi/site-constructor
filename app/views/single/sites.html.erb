@@ -1,0 +1,14 @@
+<div class="users-list col-md-6">
+  <% @sites.each do |site| %>
+  <div class="user-papper">
+    <div class="info">
+      <p><strong><%= t('.title') %></strong> <%= site.title %></p>
+      <p><strong><%= t('.description') %></strong></p>
+      <p class="description"><%= site.description %></p>
+      <p><strong><%= t('.rating') %></strong> <%= site.rating or 0 %></p>
+       <p><strong><%= t('.created') %>:</strong> <%= site.created_at.to_s(:db) %></p>
+       <%= link_to site_path(site.id) do %><strong><%= t('.show') %></strong><% end %>
+    </div>
+  </div>
+  <% end %>
+</div>

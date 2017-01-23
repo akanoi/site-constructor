@@ -29,6 +29,7 @@ en:
       sign_up: "Sign Up"
       login: "Login"
       users: "Users"
+      search: "Search"
   single:
     users:
       name: "Name:"
@@ -37,10 +38,15 @@ en:
       profile: "Profile"
       set-admin: "Set admin"
       del-admin: "Delete admin role"
+      points: "Ponts:"
     home:
       title: "Title"
       description: "Description"
-      user: "Author"
+      author: "Author"
       created: "Created"
       show: "Show"
+      rating: " Rating"
+      points: " Points"
+      user: "User"
+      see_all: "See all"
 

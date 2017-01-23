@@ -44,3 +44,11 @@ gem 'cloudinary'
 gem 'wysiwyg-rails'
 gem 'font-awesome-rails'
 gem 'acts-as-taggable-on'
+gem 'sprockets'
+gem 'rack-cors'
+
+gem 'sunspot_rails'
+ 
+group :development do
+    gem 'sunspot_solr'
+end

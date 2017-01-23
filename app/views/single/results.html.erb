@@ -1,0 +1,9 @@
+<div class="results-main">
+  <% if @result == [] %>
+    <p>None</p>
+  <% else %>
+    <%= @result.each do |r| %>
+      <p><%= r %></p>
+    <% end %>
+  <% end %>
+</div>
