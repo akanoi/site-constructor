@@ -1,7 +1,7 @@
 <div class="comp-horizontal-first">
   <div id="add-top-component">+</div>
   <div id="body-form-top">
-    <%= form_for :anything, remote: true, url: 'components' do |f| %>
+    <%= form_for :anything, remote: true, url: 'widgets' do |f| %>
       <div class="field">
         <%= f.label :body %>
         <%= f.text_area :body, class: 'component-editor' %>
@@ -21,7 +21,7 @@
 <div class="comp-horizontal-second">
   <div id="add-bottom-component">+</div>
   <div id="body-form-bottom">
-    <%= form_for :anything, remote: true, url: 'components' do |f| %>
+    <%= form_for :anything, remote: true, url: 'widgets' do |f| %>
         <div class="field">
           <%= f.label :body %>
           <%= f.text_area :body, class: 'component-editor' %>

@@ -7,16 +7,18 @@
       <p><strong><%= t('.name') %></strong> <%= user.name %></p>
       <p><strong><%= t('.email') %></strong> <%= user.email %></p>
       <p><strong><%= t('.birthday') %></strong> <%= user.birthday %></p>
+      <p><strong><%= t('.points') %></strong> <%= user.points or 0 %></p>
       <div class="buttons">
-        <button><%= t('.profile') %></button>
-        <% if user.admin %>
-        <button><%= t('.del-admin') %></button>
-        <% else %>
-        <button><%= t('.set-admin') %></button>
+        <%= button_to profile_user_path(user.id), method: :get do %><%= t('.profile') %><% end %>
+        <% if current_user.try(:admin) %>
+          <% if user.admin %>
+            <button><%= t('.del-admin') %></button>
+          <% else %>
+            <button><%= t('.set-admin') %></button>
+          <% end %>
         <% end %>
       </div>
     </div>
-    
   </div>
   <% end %>
 </div>

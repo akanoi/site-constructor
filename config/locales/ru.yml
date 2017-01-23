@@ -17,6 +17,7 @@ ru:
       profile: "Профиль"
       set-admin: "Сделать админом"
       del-admin: "Убрать права админа"
+      points: "Рейтинг:"
     home:
       title: "Заголовок"
       description: "Описание"

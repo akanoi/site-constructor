@@ -37,6 +37,7 @@ en:
       profile: "Profile"
       set-admin: "Set admin"
       del-admin: "Delete admin role"
+      points: "Ponts:"
     home:
       title: "Title"
       description: "Description"

@@ -10,13 +10,14 @@ Rails.application.routes.draw do
     resources :users do
       resources :sites do
         resources :pages do
-          resources :widget
+          resources :widgets
         end
       end
     end
 
-    get 'home', to: 'single#home', as: :home
+    get '/home', to: 'single#home', as: :home
     get '/users_list', to: 'single#users', as: :users_list
+    get '/profile/:user_id', to: 'single#profile', as: :profile_user
 
     
     get '/:locale', to: 'single#home'

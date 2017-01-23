@@ -6,7 +6,7 @@
         <li><%= link_to "ru", locale: "ru" %></li>
         <li><%= link_to home_path do %><%= t('.home') %><% end %></li>
       </ul>
-      <% if current_user.try(:admin)%>
+      <% if current_user.try(:admin) %>
         <ul class="nav navbar-nav">
           <li><%= link_to(users_list_path) do %><%= t('.users') %><% end %></li>
         </ul>

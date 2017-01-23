@@ -1,14 +1,17 @@
 <div class="col-md-10 left-area">
   <div class="news">
     <% @sites.each do |site| %>
-      <% if site.title != "" and %>
-        <div class="news-papper">
+      <% if site.title != "" and site.description != "" %>
+        <div class="news-papper ">
+          <div class="col-md-3">
+            <img width="150" height="150" avatar="<%= site.user.name %>">
+          </div>
           <p><strong><%= t('.title') %>:</strong> <%= site.title %></p>
           <p><strong><%= t('.description') %>:</strong></p>
           <p class="description"><%= site.description %></p>
           <p><strong><%= t('.created') %>:</strong> <%= site.created_at.to_s(:db) %></p> 
           <p>
-            <strong><%= t('.user') %>:</strong> <%= @users.find(site.user_id).name %>
+            <strong><%= t('.user') %>:</strong> <%= site.user.name %>
             <%= link_to site_path(site.id) do %><strong><%= t('.show') %></strong><% end %>
           </p>   
         </div>
@@ -31,7 +34,7 @@
         </tr>
       <% end %>
     </table>
-    <%= link_to "See all"%>
+    <%= link_to "See all", users_list_path %>
   </div>
   <div class="users-rating">
     <table class="list">
@@ -45,6 +48,7 @@
       </tr>
       <% end %>
     </table>
+    <%= link_to "See all", users_list_path %>
   </div>
   <div class="tags-cloud">
     
