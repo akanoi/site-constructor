@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170123115729) do
+ActiveRecord::Schema.define(version: 20170123122222) do
 
   create_table "pages", force: true do |t|
     t.datetime "created_at"
@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(version: 20170123115729) do
   add_index "taggings", ["tagger_id"], name: "index_taggings_on_tagger_id", using: :btree
 
   create_table "tags", force: true do |t|
-    t.string  "name"
-    t.integer "taggings_count", default: 0
+    t.string   "name"
+    t.integer  "taggings_count", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree

@@ -46,6 +46,7 @@ gem 'font-awesome-rails'
 gem 'sprockets'
 gem 'rack-cors'
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'progress_bar'
 
 gem 'sunspot_rails'
  

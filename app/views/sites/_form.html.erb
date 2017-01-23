@@ -26,6 +26,11 @@
     <%= f.select(:menu, options_for_select([['Vertical', 'Vertical'], ['Horizontal', 'Horizontal'],['Bottom', 'Bottom']])) %>
   </div>
 
+  <div class="field">
+    <%= f.label :tag_list, 'Tags (separated with comas)' %>
+    <%= f.text_field :tag_list, data: { autocomplete_source: Tag.order(:name).map(&:name)} %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -10,6 +10,7 @@
           <p><strong><%= t('.description') %>:</strong></p>
           <p class="description"><%= site.description %></p>
           <p><strong><%= t('.created') %>:</strong> <%= site.created_at.to_s(:db) %></p> 
+          <p><%= site.tag_list %></p>
           <p>
             <strong><%= t('.author') %>:</strong> <%= site.user.name %>
             <%= link_to site_path(site.id) do %><strong><%= t('.show') %></strong><% end %>
@@ -51,7 +52,9 @@
     </table>
     
   </div>
-  <div class="tags-cloud">
-    
+    <div id="tag_cloud">
+      <% tag_cloud Site.tag_counts, %w[s m l] do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
   </div>
 </div>

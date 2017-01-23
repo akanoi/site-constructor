@@ -4,7 +4,11 @@ class SitesController < ApplicationController
   respond_to :html
 
   def index
-    @sites = Site.order(created_at: :desc)
+    if params[:tag]
+      @sites = Site.tagged_with(params[:tag])
+    else
+      @sites = Site.order(created_at: :desc)
+    end
   end
 
   def show
@@ -65,6 +69,6 @@ class SitesController < ApplicationController
     end
 
     def site_params
-      params.require(:site).permit(:title, :description, :menu, :user_id, :rating)
+      params.require(:site).permit(:title, :description, :menu, :user_id, :rating, :tag)
     end
 end
