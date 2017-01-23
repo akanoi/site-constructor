@@ -8,7 +8,7 @@
         <li class="search">
           <%= form_tag results_path, method: :get, role: 'search', class: 'search-form' do %>
             <%= text_field_tag :s, params[:s] %>
-            <%= submit_tag t('.search'), name: nil%>
+            <%= submit_tag t('.search'), name: nil, class: 'btn btn-default'%>
           <% end %>
         </li>
       </ul>

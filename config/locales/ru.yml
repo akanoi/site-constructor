@@ -9,6 +9,7 @@ ru:
       login: "Войти"
       users: "Пользователи"
       search: "Поиск"
+      
 
   single:
     users:
@@ -22,6 +23,10 @@ ru:
     home:
       title: "Заголовок"
       description: "Описание"
-      user: "Автор"
+      author: "Автор"
       created: "Созданно"
       show: "Показать"
+      rating: " Рейтинг"
+      points: " Очки"
+      user: "Пользователь"
+      see_all: "Все"

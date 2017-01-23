@@ -42,7 +42,11 @@ en:
     home:
       title: "Title"
       description: "Description"
-      user: "Author"
+      author: "Author"
       created: "Created"
       show: "Show"
+      rating: " Rating"
+      points: " Points"
+      user: "User"
+      see_all: "See all"
 

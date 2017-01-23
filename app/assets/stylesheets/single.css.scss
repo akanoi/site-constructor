@@ -15,12 +15,11 @@
             margin: 5px;
         }
     th {
-        p {
         width: 130px;
         white-space: nowrap; 
         overflow: hidden; 
         text-overflow: ellipsis; 
-        }
+        padding: 5px;
     }
 }
 
@@ -58,6 +57,13 @@
 
     .sites-rating, .users-rating, .tags-cloud {
         margin-right: 15px;
+    }
+
+    .users-rating,
+    .sites-rating {
+        a {
+            margin: 10px;
+        }
     }
 
     .sites-rating,

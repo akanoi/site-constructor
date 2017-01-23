@@ -36,7 +36,6 @@
  }
 
  body {
-    // background-color: #E6DEDA;
     background-color: #d5ddde;
  }
 
@@ -52,9 +51,19 @@
         }
     }
 
+    .search-form {
+        margin-left: 15px;
+        .btn {
+            position: static;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-left: 15px;
+            font-size: 12px;
+        }
+    }
+
     .navbar {
         border-radius: 0px;
-        // background-color: #306452;
         background-color: #3c5148;
         border: none;
         color: black;
