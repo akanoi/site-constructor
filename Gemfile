@@ -43,9 +43,9 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'wysiwyg-rails'
 gem 'font-awesome-rails'
-gem 'acts-as-taggable-on'
 gem 'sprockets'
 gem 'rack-cors'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 gem 'sunspot_rails'
  
