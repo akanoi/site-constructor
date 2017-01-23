@@ -32,6 +32,7 @@
  *
  {
     color: #1b2726;
+    font-family: 'Ubuntu', sans-serif;
  }
 
  body {
@@ -76,6 +77,10 @@
 
     .round { 
         border-radius: 50%; 
+    }
+
+    .search-form {
+        margin-top: 12px; 
     }
 }
 

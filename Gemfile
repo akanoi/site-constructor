@@ -46,4 +46,9 @@ gem 'font-awesome-rails'
 gem 'acts-as-taggable-on'
 gem 'sprockets'
 gem 'rack-cors'
-gem 'ferret'
+
+gem 'sunspot_rails'
+ 
+group :development do
+    gem 'sunspot_solr'
+end

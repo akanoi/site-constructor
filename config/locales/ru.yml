@@ -8,6 +8,7 @@ ru:
       sign_up: "Регистрация"
       login: "Войти"
       users: "Пользователи"
+      search: "Поиск"
 
   single:
     users:

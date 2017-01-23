@@ -5,6 +5,12 @@
         <li><%= link_to "en", locale: "en" %></li>
         <li><%= link_to "ru", locale: "ru" %></li>
         <li><%= link_to home_path do %><%= t('.home') %><% end %></li>
+        <li class="search">
+          <%= form_tag results_path, method: :get, role: 'search', class: 'search-form' do %>
+            <%= text_field_tag :s, params[:s] %>
+            <%= submit_tag t('.search'), name: nil%>
+          <% end %>
+        </li>
       </ul>
       <% if current_user.try(:admin) %>
         <ul class="nav navbar-nav">

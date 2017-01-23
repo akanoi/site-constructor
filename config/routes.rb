@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get '/home', to: 'single#home', as: :home
     get '/users_list', to: 'single#users', as: :users_list
     get '/profile/:user_id', to: 'single#profile', as: :profile_user
+    get '/results', to: 'single#results', as: :results
 
     
     get '/:locale', to: 'single#home'
